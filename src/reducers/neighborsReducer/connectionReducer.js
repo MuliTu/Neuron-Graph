@@ -11,7 +11,6 @@ import {
   REMOVE_COURSE
 } from "./types";
 import * as selectors from "./selectors";
-import { statement } from "@babel/template";
 
 const init = {
   teachers: [],

@@ -3,6 +3,7 @@ import Graph from "react-graph-vis";
 import "../App.css";
 import Profile from "../components/Profile/Profile";
 import Options from './Options/Options'
+import Button from '../components/Button/Button'
 import { connect } from "react-redux";
 import {
   setData,
@@ -17,7 +18,8 @@ class NeuronGraph extends React.Component {
     this.state = {
       isNodeClicked: false,
       hierarchical:false,
-      treeSpacing:100
+      treeSpacing:100,
+      isOpen:false
     };
   }
 
@@ -63,9 +65,13 @@ class NeuronGraph extends React.Component {
     this.setCurrentNode(...nodes)
   }
 
+  onClickOptions= () => this.setState({
+    isOpen:!this.state.isOpen
+  })
+
   render() {
     const { nodes, edges } = this.props;
-    const { isNodeClicked } = this.state;
+    const { isNodeClicked, isOpen } = this.state;
     const options = {
       nodes: {
         size: 5,
@@ -99,11 +105,16 @@ class NeuronGraph extends React.Component {
     };
     return (
       <div>
-        Hierarchical
-        <input type={'checkbox'} onClick={this.onClickHierarchical}/>
+    
         <input type='number' onChange={e => this.setState({treeSpacing:parseInt(e.target.value)}) } value={this.state.treeSpacing}/>
+        <Button label={'Options'} onClick={this.onClickOptions}/>
+        {
+          isOpen?
+          <Options onClickHierarchical={this.onClickHierarchical} />
+          :
+          <div/>
 
-        <Options/>
+        }
         {isNodeClicked ? <Profile /> : <div />}
         {edges ? (
           <Graph

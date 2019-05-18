@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './style.scss'
 import { ADD_TEACHER, REMOVE_TEACHER, ADD_STUDENT, REMOVE_STUDENT, ADD_COURSE, REMOVE_COURSE } from '../../reducers/neighborsReducer/types';
 import { connect } from 'react-redux';
+import Button from '../../components/Button/Button';
+import Checkbox from '../../components/Checkbox/Checkbox'
 class Options extends Component {
     
     removeTeacherHandler = () => this.props.removeTeacher()
@@ -16,23 +18,29 @@ class Options extends Component {
 
     removeCourseHandler = () => this.props.removeCourse()
     render() {
-      console.log('options,',this.props)
     return (
+      <div>
+      <h3>Options</h3>
       <div className='options'>
         <div>
             <p>Teachers</p>
-            <button onClick={this.addTeacherHandler}> + </button>
-            <button onClick={this.removeTeacherHandler}> - </button>
+            <Button label={'+'} onClick={this.addTeacherHandler} />
+            <Button label={'-'} onClick={this.removeTeacherHandler} />
         </div>
         <div>
             <p>Students</p>
-            <button onClick={this.addStudentHandler}> + </button>
-            <button onClick={this.removeStudentHandler}> - </button>
+            <Button label={'+'} onClick={this.addStudentHandler} />
+            <Button label={'-'} onClick={this.removeStudentHandler} />
         </div>
         <div>
             <p>Courses</p>
-            <button onClick={this.addCourseHandler}> + </button>
-            <button onClick={this.removeCourseHandler}> - </button>
+            <Button label={'+'} onClick={this.addCourseHandler} />
+            <Button label={'-'} onClick={this.removeCourseHandler} />
+        </div>
+        <div>
+        <p>Heica</p>
+        <Checkbox  onChange={this.props.onClickHierarchical} />
+        </div>
         </div>
       </div>
     )
