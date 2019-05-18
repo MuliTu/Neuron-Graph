@@ -1,0 +1,15 @@
+.teacher{
+    background-color:rgba( red,0.4);
+    height: 350px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .image{
+        margin: auto;
+        width:auto;
+    }
+    .information{
+        margin:10px;
+    }
+}
