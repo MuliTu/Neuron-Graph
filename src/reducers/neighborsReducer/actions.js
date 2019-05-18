@@ -1,7 +1,7 @@
 import students from "../../utils/data/stud.json";
 import teachers from "../../utils/data/teachers.json";
 import curses from "../../utils/data/curses.json";
-import { SET_NODES, SET_EDGES , SET_CURRENT_NODE, SET_COORDINATE } from "./types";
+import { SET_NODES, SET_EDGES , SET_CURRENT_NODE, SET_COORDINATE, REMOVE_TEACHER, ADD_TEACHER, ADD_STUDENT, REMOVE_STUDENT } from "./types";
 
 export const setData = state => dispatch => {
     setNodes(dispatch)
@@ -20,7 +20,9 @@ const setNodes = dispatch => {
     borderWidth: 4.5,
     borderWidthSelected: 20,
   }));
-  const indexedStudents = indexForGraph.slice(teachers.length, students.length+teachers.length).map(data => ({
+  const indexedStudents = indexForGraph
+  .slice(teachers.length, students.length+teachers.length)
+  .map(data => ({
     ...data,
     label: `${data.first_name} ${data.last_name}`,
     shape: "circularImage",
@@ -42,7 +44,7 @@ const setNodes = dispatch => {
   }));
   dispatch({
     type: SET_NODES,
-    payload: [...indexedTeachers,...indexedStudents,...indexedCourses]
+    payload: {teachers:indexedTeachers,students:indexedStudents, courses:indexedCourses}
   });
   setEdges(indexedTeachers,'courses',indexedCourses,'cid','Teaching',dispatch)
   setEdges(indexedStudents,'courses',indexedCourses,'cid','Study',dispatch)
@@ -58,7 +60,6 @@ export const setEdges = ( parents,parentProp,children,childrenProp,label='',disp
           from: parent.id,
           to: child.id,
           label:label,
-
         });
       }
     }
@@ -85,10 +86,4 @@ export const setCoordinate = obj => dispatch => {
         }
     })
 
-}
-
-export const testArrayLess = state => dispatch => {
-    dispatch({
-        type:'LESS'
-    })
 }

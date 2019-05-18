@@ -1,5 +1,5 @@
 {
-  "homepage": "http://MuliTu.github.io/Neuron-Graph",
+  "homepage": "https://mulitu.github.io/Neuron-Graph/",
   "name": "neuron-graph",
   "version": "0.1.0",
   "private": true,
@@ -23,6 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

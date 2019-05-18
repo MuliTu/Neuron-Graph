@@ -2,12 +2,12 @@ import React from "react";
 import Graph from "react-graph-vis";
 import "../App.css";
 import Profile from "../components/Profile/Profile";
+import Options from './Options/Options'
 import { connect } from "react-redux";
 import {
   setData,
   setCurrentNode,
   setCoordinate,
-  testArrayLess
 } from "../reducers/neighborsReducer/actions";
 import { _getNodes, _getEdges } from "../store/index";
 
@@ -15,8 +15,16 @@ class NeuronGraph extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isNodeClicked: false
+      isNodeClicked: false,
+      hierarchical:false,
+      treeSpacing:100
     };
+  }
+
+  onClickHierarchical = () =>{
+    this.setState({
+      hierarchical: !this.state.hierarchical
+    },()=>this.forceUpdate())
   }
   componentDidMount() {
     this.props.setData();
@@ -66,16 +74,19 @@ class NeuronGraph extends React.Component {
           enabled: true
         }
       },
-      autoResize: true,
+      autoResize: false,
       layout: {
-        hierarchical: false
+        hierarchical:{
+          enabled:this.state.hierarchical,
+          nodeSpacing:this.state.treeSpacing
+        } 
       },
       edges: {
-        width: 0.11,
+        width: 1.11,
       },
       height: "500px",
       physics: {
-        enabled: true
+        enabled: !this.state.hierarchical
       },
       interaction: {
         hover: true,
@@ -88,6 +99,11 @@ class NeuronGraph extends React.Component {
     };
     return (
       <div>
+        Hierarchical
+        <input type={'checkbox'} onClick={this.onClickHierarchical}/>
+        <input type='number' onChange={e => this.setState({treeSpacing:parseInt(e.target.value)}) } value={this.state.treeSpacing}/>
+
+        <Options/>
         {isNodeClicked ? <Profile /> : <div />}
         {edges ? (
           <Graph
@@ -114,5 +130,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { setData, setCurrentNode, setCoordinate, testArrayLess }
+  { setData, setCurrentNode, setCoordinate}
 )(NeuronGraph);

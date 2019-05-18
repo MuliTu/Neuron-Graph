@@ -1,0 +1,10 @@
+.options {
+    height: 100px;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    div{
+        justify-content: center;
+        margin: auto
+    }
+}
