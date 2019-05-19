@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.scss";
 import { connect } from "react-redux";
 import { _getXpage, _getYpage, _getCurrentNode } from "../../store/index";
 import Student from "../Student/Student";
@@ -10,7 +9,6 @@ import FloatCard from "../FloatCard/FloatCard";
 class Profile extends React.Component {
   selectComponentByType = () => {
     const { profile } = this.props;
-    console.log(this.props);
     if (profile !== undefined)
       switch (profile.type) {
         case "student":
