@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Neuron-Graph/precache-manifest.d0efba5db840baa52ca0b820292454c2.js"
+  "/Neuron-Graph/precache-manifest.f9f8a9fefe58fe91ace88370c0c1abe2.js"
 );
 
 self.addEventListener('message', (event) => {
