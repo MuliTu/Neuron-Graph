@@ -14,7 +14,6 @@ const Student = ({ profile }) => {
         <div>
           <b>Full name:</b> {profile.first_name} {profile.last_name}
         </div>
-        <hr />
         <div><b>Email:</b> {profile.email}</div>
         <div><b>Gender:</b> {profile.gender}</div>
         <div><b>From:</b> {profile.country}</div>

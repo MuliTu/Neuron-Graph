@@ -11,7 +11,8 @@ class Profile extends React.Component {
   
   selectComponentByType = () => {
     const {profile} = this.props
-    if(profile.type !== undefined)
+    console.log(this.props)
+    if(profile!== undefined)
     switch (profile.type) {
       case "student":
         return <Student profile={profile} />;
