@@ -1,3 +1,5 @@
+
+
 .options {
   flex-wrap: wrap;
   padding: 10px;
@@ -13,7 +15,7 @@
 }
 .open_window {
   transition: height 1s;
-  height: 142px;
+  height: 152px;
 }
 
 .close_window {
@@ -24,6 +26,6 @@
 @media screen and (max-width: 527px) {
   .open_window {
     transition: height 1s;
-    height: 212px;
+    height: 220px;
   }
 }

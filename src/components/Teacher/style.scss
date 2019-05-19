@@ -1,13 +1,13 @@
 .teacher {
   background-color: rgba(red, 0.4);
-  height: 350px;
-  width: 250px;
   display: flex;
+  height: auto;
+  width: auto;
+  padding: 4px;
   flex-direction: column;
   justify-content: center;
-  .image {
-    margin: auto;
-    width: auto;
+  .image_content_wrapper{
+    display: flex;
   }
   .information {
     margin: 10px;

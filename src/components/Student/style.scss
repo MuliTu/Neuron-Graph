@@ -1,13 +1,13 @@
 .student {
   background-color: rgba(#ffa500, 0.4);
-  height: 350px;
-  width: 250px;
+  height: auto;
+  width: auto;
+  padding: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .image {
-    margin: auto;
-    width: auto;
+  .image-content-wrapper{
+    display: flex;
   }
   .information {
     margin: 10px;

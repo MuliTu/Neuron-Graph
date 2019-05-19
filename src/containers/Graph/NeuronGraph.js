@@ -37,11 +37,12 @@ class NeuronGraph extends React.Component {
     window.removeEventListener("mousemove", this.onMouseMoveHandler);
   }
 
-  onMouseMoveHandler = e =>
+  onMouseMoveHandler = e =>{
     this.props.setCoordinate({
-      x: e.pageX,
-      y: e.pageY + 20
+      x: e.pageX + 300 <= window.innerWidth ? e.pageX : e.pageX - 300,
+      y: e.pageY - 150 <= window.innerHeight? e.pageY - 150 : e.pageY
     });
+  }
 
   setCurrentNode = node => {
     this.props.setCurrentNode(node);
