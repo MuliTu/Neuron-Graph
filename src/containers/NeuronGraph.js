@@ -1,16 +1,18 @@
-import React from "react";
-import Graph from "react-graph-vis";
-import "../App.css";
-import Profile from "../components/Profile/Profile";
+import React from 'react';
+import Graph from 'react-graph-vis';
+import { connect } from 'react-redux';
+
+import Profile from '../components/Profile/Profile';
 import Options from './Options/Options'
 import MenuButton from '../components/menuButton/MenuButton'
-import { connect } from "react-redux";
 import {
   setData,
   setCurrentNode,
   setCoordinate,
-} from "../reducers/neighborsReducer/actions";
-import { _getNodes, _getEdges } from "../store/index";
+} from '../reducers/neighborsReducer/actions';
+import { _getNodes, _getEdges } from '../store/index';
+import '../App.css';
+
 
 class NeuronGraph extends React.Component {
   constructor(props) {
@@ -28,11 +30,11 @@ class NeuronGraph extends React.Component {
   
   componentDidMount() {
     this.props.setData();
-    window.addEventListener("mousemove", this.onMouseMoveHandler);
+    window.addEventListener('mousemove', this.onMouseMoveHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousemove", this.onMouseMoveHandler);
+    window.removeEventListener('mousemove', this.onMouseMoveHandler);
   }
 
   onMouseMoveHandler = e => {
@@ -50,6 +52,7 @@ class NeuronGraph extends React.Component {
   }
 
   onHoverNodeHandler = event => {
+    
     const { node } = event;
     this.setCurrentNode(node)
   };
@@ -62,7 +65,7 @@ class NeuronGraph extends React.Component {
     this.setCurrentNode(...nodes)
   }
 
-  onClickOptions= () => this.setState({isOpen:!this.state.isOpen})
+  onClickOptions = () => this.setState({isOpen:!this.state.isOpen})
 
   onChangeTreeSpacingHandler = e => this.setState({treeSpacing:parseInt(e.target.value)}) 
 
@@ -87,7 +90,7 @@ class NeuronGraph extends React.Component {
       edges: {
         width: 1.11,
       },
-      height: "500px",
+      height: '500px',
       physics: {
         enabled: !this.state.hierarchical
       },
@@ -102,13 +105,20 @@ class NeuronGraph extends React.Component {
     };
     return (
       <div>
-        <MenuButton onClick={this.onClickOptions} isClicked={isOpen}/>
+        <MenuButton onClick={ this.onClickOptions } isClicked={ isOpen }/>
+
           <Options 
             onClickHierarchical={this.onClickHierarchical} 
             treeSpacing={treeSpacing}
             onChangeTreeSpacing={this.onChangeTreeSpacingHandler} 
             isOpen={isOpen}/>
-        {isNodeClicked ? <Profile /> : <div />}
+
+        {
+          isNodeClicked ? 
+          <Profile /> 
+          : 
+          <div />
+          }
           <Graph graph={{ nodes: nodes, edges: edges }}
             options={options}
             events={{

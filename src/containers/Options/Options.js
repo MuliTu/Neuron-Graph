@@ -29,26 +29,26 @@ class Options extends Component {
       <div className={this.props.isOpen? 'open_window':'close_window'}>
         <h3>Options</h3>
         <div className="options">
-          <div className='row'>
+          <div className='col'>
             <p>Teachers</p>
             <Button label={"+"} onClick={this.addTeacherHandler} />
             <Button label={"-"} onClick={this.removeTeacherHandler} />
           </div>
-          <div className='row'>
+          <div className='col'>
             <p>Students</p>
             <Button label={"+"} onClick={this.addStudentHandler} />
             <Button label={"-"} onClick={this.removeStudentHandler} />
           </div>
-          <div className='row'>
+          <div className='col'>
             <p>Courses</p>
             <Button label={"+"} onClick={this.addCourseHandler} />
             <Button label={"-"} onClick={this.removeCourseHandler} />
           </div>
-          <div className='row'>
+          <div className='col'>
             <p>Hierarchical</p>
             <Checkbox onChange={this.props.onClickHierarchical} />  
           </div>
-          <div className='row'>
+          <div className='col'>
             <p>Tree Spacing (on Hierarchical)</p>
             <input type={'number'} value={this.props.treeSpacing} onChange={this.props.onChangeTreeSpacing}/>
             </div>

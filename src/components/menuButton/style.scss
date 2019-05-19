@@ -1,11 +1,14 @@
+$transitionTime: all 0.25s;
+$button_width: 35px;
+
 .button_wrapper{
-width: 35px;
+width: $button_width;
 }
 
 .line {
     cursor: pointer;
-    transition: all 1s;
-    width: 35px;
+    transition: $transitionTime;
+    width: $button_width;
     height: 5px;
     background-color: black;
     margin: 6px 0;   
@@ -13,8 +16,8 @@ width: 35px;
 
 .line_x1{
     cursor: pointer;
-    transition: all 1s;
-    width: 35px;
+    transition: $transitionTime;
+    width: $button_width;
     height: 5px;
     background-color: black;
     transform: rotate(45deg);
@@ -22,14 +25,14 @@ width: 35px;
 
 .line_x2{
     cursor: pointer;
-    transition: all 1s;
+    transition:$transitionTime;
     opacity: 0;
 }
 
 .line_x3 {
     cursor: pointer;
-    transition: all 1s;
-    width: 35px;
+    transition:$transitionTime;
+    width: $button_width;
     height: 5px;
     background-color: black;
     margin: -3px 0;

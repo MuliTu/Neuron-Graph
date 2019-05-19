@@ -11,6 +11,7 @@ class Profile extends React.Component {
   
   selectComponentByType = () => {
     const {profile} = this.props
+    if(profile.type !== undefined)
     switch (profile.type) {
       case "student":
         return <Student profile={profile} />;
@@ -22,16 +23,10 @@ class Profile extends React.Component {
     }
   };
 
-
   render() {
     const {xPage,yPage} = this.props
     return (
-      <FloatCard top={yPage} left={xPage}>
-      {
-        this.selectComponentByType()
-      }
-      </FloatCard>
-      
+      <FloatCard top={yPage} left={xPage}>{this.selectComponentByType()}</FloatCard>
     );
   }
 }

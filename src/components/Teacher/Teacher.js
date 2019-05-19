@@ -1,28 +1,30 @@
 import React from 'react'
-import { getCurseName } from '../Profile/utils/curssesName'
+import { getCourseName } from '../Profile/utils/coursesName'
 import './style.scss'
 
  const  Teacher = ({profile}) => {
   return (
     <div className="teacher">
       <div className="image">
-        <img src={profile.image} />
+        <img src={profile.image} alt=''/>
       </div>
+    
       <div className="information">
-        <div>ID: {profile.tid}</div>
+      <hr />
+        <div className='small'>ID: {profile.tid}</div>
+      
         <div>
-          Full name: {profile.full_name}
+          <b>Full name:</b> {profile.full_name}
         </div>
-        <hr />
-        <div>Email: {profile.email}</div>
-        <div>Gender: {profile.gender}</div>
-        <div>From: {profile.country}</div>
+       
+        <div><b>Email:</b> {profile.email}</div>
+        <div><b>Gender:</b> {profile.gender}</div>
         <div>
-          Teaching:
+          <b>Teaching:</b>
           {
               profile.courses.map((curse, idx) => (
-            <div key={idx}>
-              {idx + 1}.{getCurseName(curse)}
+            <div key={idx}>&ensp;
+              {idx + 1}.{getCourseName(curse)}
             </div>
           ))
           }

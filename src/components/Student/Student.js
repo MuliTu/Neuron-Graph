@@ -1,28 +1,27 @@
-import React from "react";
-import { getCurseName } from "../Profile/utils/curssesName";
-import "./style.scss";
+import React from 'react';
+import { getCourseName } from '../Profile/utils/coursesName';
+import './style.scss';
 
 const Student = ({ profile }) => {
   return (
-    <div className="student">
-      <div className="image">
-        <img src={profile.image ? profile.image : ""} />
+    <div className='student'>
+      <div className='image'>
+        <img src={profile.image} alt=''  />
       </div>
-      <div className="information">
-        <div>ID:{profile.sid}</div>
+      <div className='information'>
+      <hr />
+        <div className='small'>ID:{profile.sid}</div>
         <div>
-          Full name: {profile.first_name} {profile.last_name}
+          <b>Full name:</b> {profile.first_name} {profile.last_name}
         </div>
         <hr />
-        <div>Email: {profile.email}</div>
-        <div>Gender: {profile.gender}</div>
-        <div>From: {profile.country}</div>
+        <div><b>Email:</b> {profile.email}</div>
+        <div><b>Gender:</b> {profile.gender}</div>
+        <div><b>From:</b> {profile.country}</div>
         <div>
-          Study:
+          <b>Study:</b>
           {profile.courses.map((curse, idx) => (
-            <div key={idx}>
-              {idx + 1}.{getCurseName(curse)}
-            </div>
+            <div key={idx}>&ensp;{idx + 1}.{getCourseName(curse)}</div>
           ))}
         </div>
       </div>
