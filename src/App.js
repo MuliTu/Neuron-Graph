@@ -2,26 +2,32 @@ import React from "react";
 import NeuronGraph from "./containers/Graph/NeuronGraph";
 import Options from "./containers/Options/Options";
 import MenuButton from "./components/UI/menuButton/MenuButton";
+import {_getTreeSpacing } from './store/index'
+import { connect } from "react-redux";
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
+      hierarchical: false,
       isOpen: false
     };
   }
+  onClickHierarchical = () =>
+  this.setState({ hierarchical: !this.state.hierarchical }, () =>
+    this.forceUpdate()
+  );
 
   onClickOptions = () => this.setState({ isOpen: !this.state.isOpen });
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, hierarchical } = this.state;
     return (
       <div className="App">
-        <div style={{ display: "flex" }}>
+        <div className='flex'>
           <div className='option_section'>
             <Options
               onClickHierarchical={this.onClickHierarchical}
-              treeSpacing={"1"}
+              treeSpacing={this.props.treeSpacing}
               onChangeTreeSpacing={this.onChangeTreeSpacingHandler}
               isOpen={isOpen}
             />
@@ -36,7 +42,7 @@ class App extends React.Component {
               </div>
             </div>
             <div style={{ float: "right" }}>
-              <NeuronGraph />
+              <NeuronGraph hierarchical={hierarchical} treeSpacing={this.props.treeSpacing}/>
             </div>
           </div>
         </div>
@@ -44,5 +50,8 @@ class App extends React.Component {
     );
   }
 }
+const mapStateToProps = state =>({
+  treeSpacing: _getTreeSpacing(state)
+})
 
-export default App;
+export default connect(mapStateToProps)(App)

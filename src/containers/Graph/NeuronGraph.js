@@ -16,18 +16,13 @@ class NeuronGraph extends React.Component {
     super(props);
     this.state = {
       isNodeClicked: false,
-      hierarchical: false,
       width:'',
       height:''
 
     };
   }
 
-  onClickHierarchical = () =>
-    this.setState({ hierarchical: !this.state.hierarchical }, () =>
-      this.forceUpdate()
-    );
-
+  
   componentDidMount() {
     this.props.setData();
     this.setState({
@@ -70,8 +65,8 @@ class NeuronGraph extends React.Component {
   onClickOptions = () => this.setState({ isOpen: !this.state.isOpen });
 
   render() {
-    const { nodes, edges, treeSpacing } = this.props;
-    const { isNodeClicked, height, width, hierarchical } = this.state;
+    const { nodes, edges, treeSpacing, hierarchical } = this.props;
+    const { isNodeClicked, height, width } = this.state;
     const options = {
       ...config,
       height:height,
@@ -114,7 +109,7 @@ class NeuronGraph extends React.Component {
 const mapStateToProps = state => ({
   nodes: _getNodes(state),
   edges: _getEdges(state),
-  treeSpacing: _getTreeSpacing(state)
+
 });
 
 export default connect(
