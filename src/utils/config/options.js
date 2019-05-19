@@ -10,7 +10,6 @@ export const config = {
   edges: {
     width: 1.11
   },
-  height: "500px",
   interaction: {
     hover: true,
     hoverConnectedEdges: true,

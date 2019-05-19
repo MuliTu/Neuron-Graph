@@ -3,8 +3,6 @@ import Graph from "react-graph-vis";
 import { connect } from "react-redux";
 import { config } from "../../utils/config/options";
 import Profile from "../../components/Profile/Profile";
-import Options from "../Options/Options";
-import MenuButton from "../../components/UI/menuButton/MenuButton";
 import {
   setData,
   setCurrentNode,
@@ -19,7 +17,9 @@ class NeuronGraph extends React.Component {
     this.state = {
       isNodeClicked: false,
       hierarchical: false,
-      isOpen: false
+      width:'',
+      height:''
+
     };
   }
 
@@ -30,6 +30,10 @@ class NeuronGraph extends React.Component {
 
   componentDidMount() {
     this.props.setData();
+    this.setState({
+      height:(window.innerHeight - 100).toString(),
+      width:window.innerWidth.toString()
+    })
     window.addEventListener("mousemove", this.onMouseMoveHandler);
   }
 
@@ -67,9 +71,11 @@ class NeuronGraph extends React.Component {
 
   render() {
     const { nodes, edges, treeSpacing } = this.props;
-    const { isNodeClicked, isOpen, hierarchical } = this.state;
+    const { isNodeClicked, height, width, hierarchical } = this.state;
     const options = {
       ...config,
+      height:height,
+      width:width,
       layout: {
         hierarchical: {
           enabled: hierarchical,
@@ -81,27 +87,26 @@ class NeuronGraph extends React.Component {
       }
     };
     return (
-      <div>
-        <MenuButton onClick={this.onClickOptions} isClicked={isOpen} />
+      <div style={{float:"right"}}>
+               {/* <MenuButton onClick={this.onClickOptions} isClicked={isOpen} /> */}
 
-        <Options
+       {/* <Options
           onClickHierarchical={this.onClickHierarchical}
           treeSpacing={treeSpacing}
           onChangeTreeSpacing={this.onChangeTreeSpacingHandler}
           isOpen={isOpen}
-        />
-
-        {isNodeClicked ? <Profile /> : <div />}
-        <Graph
-          graph={{ nodes: nodes, edges: edges }}
-          options={options}
-          events={{
-            hoverNode: this.onHoverNodeHandler,
-            blurNode: this.onBlueHandler,
-            select: this.onClickNode
-          }}
-        />
-      </div>
+        /> */}
+{isNodeClicked ? <Profile /> : <div />}
+<Graph
+  graph={{ nodes: nodes, edges: edges }}
+  options={options}
+  events={{
+    hoverNode: this.onHoverNodeHandler,
+    blurNode: this.onBlueHandler,
+    select: this.onClickNode
+  }}
+/>
+     </div>
     );
   }
 }
