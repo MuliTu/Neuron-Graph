@@ -8,13 +8,6 @@ import Course from "../Course/Course";
 import FloatCard from "../FloatCard/FloatCard";
 
 class Profile extends React.Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       isFade:false
-    }
-  }
   
   selectComponentByType = () => {
     const {profile} = this.props
@@ -33,7 +26,7 @@ class Profile extends React.Component {
   render() {
     const {xPage,yPage} = this.props
     return (
-<FloatCard top={yPage} left={xPage}>
+      <FloatCard top={yPage} left={xPage}>
       {
         this.selectComponentByType()
       }

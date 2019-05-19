@@ -1,7 +1,8 @@
 .App {
-    text-align: center
+    text-align: center;
+    margin: 5px;
     
 }
 canvas {
-    background-color:  rgba(117, 129, 163, 0.596);
+    background-color: whitesmoke;
 }

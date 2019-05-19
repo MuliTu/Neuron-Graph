@@ -1,7 +1,7 @@
 import students from "../../utils/data/stud.json";
 import teachers from "../../utils/data/teachers.json";
 import curses from "../../utils/data/curses.json";
-import { SET_NODES, SET_EDGES , SET_CURRENT_NODE, SET_COORDINATE, REMOVE_TEACHER, ADD_TEACHER, ADD_STUDENT, REMOVE_STUDENT } from "./types";
+import { SET_NODES, SET_EDGES , SET_CURRENT_NODE, SET_COORDINATE} from "./types";
 
 export const setData = state => dispatch => {
     setNodes(dispatch)

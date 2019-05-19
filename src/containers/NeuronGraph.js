@@ -3,7 +3,7 @@ import Graph from "react-graph-vis";
 import "../App.css";
 import Profile from "../components/Profile/Profile";
 import Options from './Options/Options'
-import Button from '../components/Button/Button'
+import MenuButton from '../components/menuButton/MenuButton'
 import { connect } from "react-redux";
 import {
   setData,
@@ -23,11 +23,9 @@ class NeuronGraph extends React.Component {
     };
   }
 
-  onClickHierarchical = () =>{
-    this.setState({
-      hierarchical: !this.state.hierarchical
+  onClickHierarchical = () =>this.setState({hierarchical: !this.state.hierarchical
     },()=>this.forceUpdate())
-  }
+  
   componentDidMount() {
     this.props.setData();
     window.addEventListener("mousemove", this.onMouseMoveHandler);
@@ -44,7 +42,7 @@ class NeuronGraph extends React.Component {
     });
   };
 
-  setCurrentNode = (node)=>{
+  setCurrentNode = (node)=> {
     this.props.setCurrentNode(node);
     this.setState({
       isNodeClicked: true
@@ -59,19 +57,18 @@ class NeuronGraph extends React.Component {
   onBlueHandler = () => this.setState({ isNodeClicked: false });
   
   onClickNode = e => {
-   
     const {nodes} = e
     if(nodes.length > 0)
     this.setCurrentNode(...nodes)
   }
 
-  onClickOptions= () => this.setState({
-    isOpen:!this.state.isOpen
-  })
+  onClickOptions= () => this.setState({isOpen:!this.state.isOpen})
+
+  onChangeTreeSpacingHandler = e => this.setState({treeSpacing:parseInt(e.target.value)}) 
 
   render() {
     const { nodes, edges } = this.props;
-    const { isNodeClicked, isOpen } = this.state;
+    const { isNodeClicked, isOpen, treeSpacing } = this.state;
     const options = {
       nodes: {
         size: 5,
@@ -105,30 +102,18 @@ class NeuronGraph extends React.Component {
     };
     return (
       <div>
-    
-        <input type='number' onChange={e => this.setState({treeSpacing:parseInt(e.target.value)}) } value={this.state.treeSpacing}/>
-        <Button label={'Options'} onClick={this.onClickOptions}/>
-        {
-          isOpen?
-          <Options onClickHierarchical={this.onClickHierarchical} />
-          :
-          <div/>
-
-        }
+        <MenuButton onClick={this.onClickOptions} isClicked={isOpen}/>
+          <Options 
+            onClickHierarchical={this.onClickHierarchical} 
+            treeSpacing={treeSpacing}
+            onChangeTreeSpacing={this.onChangeTreeSpacingHandler} 
+            isOpen={isOpen}/>
         {isNodeClicked ? <Profile /> : <div />}
-        {edges ? (
-          <Graph
-            graph={{ nodes: nodes, edges: edges }}
+          <Graph graph={{ nodes: nodes, edges: edges }}
             options={options}
             events={{
               hoverNode: this.onHoverNodeHandler,
-              blurNode: this.onBlueHandler,
-              select:this.onClickNode
-            }}
-          />
-        ) : (
-          <div>Loading...</div>
-        )}
+              blurNode: this.onBlueHandler,select:this.onClickNode}}/>
       </div>
     );
   }
