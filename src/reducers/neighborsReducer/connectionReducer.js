@@ -8,7 +8,8 @@ import {
   ADD_STUDENT,
   REMOVE_STUDENT,
   ADD_COURSE,
-  REMOVE_COURSE
+  REMOVE_COURSE,
+  CHANGE_TREE_SPACING
 } from "./types";
 import * as selectors from "./selectors";
 
@@ -20,7 +21,8 @@ const init = {
   courses: [],
   tempCourses:[],
   nodes: [],
-  edges: []
+  edges: [],
+  treeSpacing:100
 };
 
 export default function(state = init, action) {
@@ -88,6 +90,8 @@ export default function(state = init, action) {
         nodes: [...state.tempTeachers, ...state.tempStudents, ...state.tempCourses]
       };
 
+      case CHANGE_TREE_SPACING:
+      return {...state, treeSpacing:action.payload}
 
     default:
       return state;
@@ -106,3 +110,7 @@ export const getXPage = state => {
 export const getYPage = state => {
   return selectors.getYPage(state);
 };
+export const getTreeSpacing = state => {
+  return selectors.getTreeSpacing(state);
+};
+

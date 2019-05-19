@@ -3,3 +3,4 @@ export const getEdges =(state)=> {return state.edges}
 export const getCurrentNode = (state) => {return state.current}
 export const getXPage = (state) => {return state.xPage}
 export const getYPage = (state) => {return state.yPage}
+export const getTreeSpacing = (state) => {return state.treeSpacing}

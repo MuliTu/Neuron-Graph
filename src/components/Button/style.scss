@@ -1,18 +1,17 @@
 .button {
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: rgb(66, 85, 255);
-    color:white;
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: rgb(66, 85, 255);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: auto;
+  transition: box-shadow 0.5s;
+  &:hover {
     transition: box-shadow 0.5s;
-    &:hover{
-        transition: box-shadow 0.5s;
-        background-color: #5667fd;
-        box-shadow: 1px 1px 1px 1px black;
-
-    }
+    background-color: #5667fd;
+    box-shadow: 1px 1px 1px 1px black;
+  }
 }

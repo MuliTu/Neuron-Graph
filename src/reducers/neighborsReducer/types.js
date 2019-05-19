@@ -4,6 +4,7 @@ export const SET_CURRENT_NODE = 'SET_CURRENT_NODE';
 export const GET_AMOUNT = 'GET_AMOUNT';
 export const SET_NODES = 'SET_NODES';
 export const SET_EDGES = 'SET_EDGES';
+export const CHANGE_TREE_SPACING = 'CHANGE_TREE_SPACING';
 
 
 export const REMOVE_TEACHER = 'REMOVE_TEACHER';
