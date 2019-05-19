@@ -1,18 +1,18 @@
 .student {
-    background-color:rgba( #FFA500,0.4);
-    height: 350px;
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .image{
-        margin: auto;
-        width:auto;
+  background-color: rgba(#ffa500, 0.4);
+  height: 350px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .image {
+    margin: auto;
+    width: auto;
+  }
+  .information {
+    margin: 10px;
+    .small {
+      font-size: 10px;
     }
-    .information{
-        margin:10px;
-        .small{
-            font-size: 10px;
-        }
-    }
+  }
 }

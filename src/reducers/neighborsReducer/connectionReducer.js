@@ -19,10 +19,10 @@ const init = {
   students: [],
   tempStudents: [],
   courses: [],
-  tempCourses:[],
+  tempCourses: [],
   nodes: [],
   edges: [],
-  treeSpacing:100
+  treeSpacing: 100
 };
 
 export default function(state = init, action) {
@@ -36,14 +36,18 @@ export default function(state = init, action) {
         students: students,
         tempStudents: students,
         courses: courses,
-        tempCourses:courses
+        tempCourses: courses
       };
 
     case SET_EDGES:
       return {
         ...state,
         edges: [...action.payload, ...state.edges],
-        nodes: [...state.tempTeachers, ...state.tempStudents, ...state.tempCourses]
+        nodes: [
+          ...state.tempTeachers,
+          ...state.tempStudents,
+          ...state.tempCourses
+        ]
       };
 
     case SET_CURRENT_NODE:
@@ -53,45 +57,87 @@ export default function(state = init, action) {
       return { ...state, xPage: action.payload.x, yPage: action.payload.y };
 
     case REMOVE_TEACHER:
-      state.tempTeachers = state.tempTeachers.slice(0,state.tempTeachers.length - 1);
+      state.tempTeachers = state.tempTeachers.slice(
+        0,
+        state.tempTeachers.length - 1
+      );
       return {
         ...state,
-        nodes: [...state.tempTeachers, ...state.tempStudents, ...state.tempCourses]
+        nodes: [
+          ...state.tempTeachers,
+          ...state.tempStudents,
+          ...state.tempCourses
+        ]
       };
-      case REMOVE_STUDENT:
-      state.tempStudents = state.tempStudents.slice(0, state.tempStudents.length - 1);
+    case REMOVE_STUDENT:
+      state.tempStudents = state.tempStudents.slice(
+        0,
+        state.tempStudents.length - 1
+      );
       return {
         ...state,
-        nodes: [...state.tempTeachers, ...state.tempStudents, ...state.tempCourses]
+        nodes: [
+          ...state.tempTeachers,
+          ...state.tempStudents,
+          ...state.tempCourses
+        ]
       };
 
-      case REMOVE_COURSE:
-      state.tempCourses = state.tempCourses.slice(0, state.tempCourses.length - 1);
+    case REMOVE_COURSE:
+      state.tempCourses = state.tempCourses.slice(
+        0,
+        state.tempCourses.length - 1
+      );
       return {
         ...state,
-        nodes: [...state.tempTeachers, ...state.tempStudents, ...state.tempCourses]
+        nodes: [
+          ...state.tempTeachers,
+          ...state.tempStudents,
+          ...state.tempCourses
+        ]
       };
 
     case ADD_TEACHER:
-      state.tempTeachers = state.teachers.slice(0, state.tempTeachers.length + 1);
-      return { ...state, nodes: [...state.tempTeachers, ...state.tempStudents, ...state.tempCourses]};
+      state.tempTeachers = state.teachers.slice(
+        0,
+        state.tempTeachers.length + 1
+      );
+      return {
+        ...state,
+        nodes: [
+          ...state.tempTeachers,
+          ...state.tempStudents,
+          ...state.tempCourses
+        ]
+      };
 
     case ADD_STUDENT:
-      state.tempStudents = state.students.slice(0, state.tempStudents.length + 1);
+      state.tempStudents = state.students.slice(
+        0,
+        state.tempStudents.length + 1
+      );
       return {
         ...state,
-        nodes: [...state.tempTeachers, ...state.tempStudents, ...state.tempCourses]
+        nodes: [
+          ...state.tempTeachers,
+          ...state.tempStudents,
+          ...state.tempCourses
+        ]
       };
 
-      case ADD_COURSE:
-      state.tempCourses = state.courses.slice(0, state.tempCourses.length + 1)
+    case ADD_COURSE:
+      state.tempCourses = state.courses.slice(0, state.tempCourses.length + 1);
       return {
         ...state,
-        nodes: [...state.tempTeachers, ...state.tempStudents, ...state.tempCourses]
+        nodes: [
+          ...state.tempTeachers,
+          ...state.tempStudents,
+          ...state.tempCourses
+        ]
       };
 
-      case CHANGE_TREE_SPACING:
-      return {...state, treeSpacing:action.payload}
+    case CHANGE_TREE_SPACING:
+      return { ...state, treeSpacing: action.payload };
 
     default:
       return state;
@@ -113,4 +159,3 @@ export const getYPage = state => {
 export const getTreeSpacing = state => {
   return selectors.getTreeSpacing(state);
 };
-

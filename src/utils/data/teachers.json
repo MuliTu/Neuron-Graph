@@ -1,6 +1,6 @@
 [
     {
-        "image":"https://randomuser.me/api/portraits/women/4.jpg",
+        "image": "https://randomuser.me/api/portraits/women/4.jpg",
         "type": "teacher",
         "tid": "7228022424",
         "full_name": "Bibby Warburton",
@@ -28,7 +28,7 @@
         ]
     },
     {
-        "image":"https://randomuser.me/api/portraits/women/5.jpg",
+        "image": "https://randomuser.me/api/portraits/women/5.jpg",
         "type": "teacher",
         "tid": "4076097394",
         "full_name": "Sydney Lathom",
@@ -42,7 +42,7 @@
         ]
     },
     {
-        "image":"https://randomuser.me/api/portraits/women/6.jpg",
+        "image": "https://randomuser.me/api/portraits/women/6.jpg",
         "type": "teacher",
         "tid": "7253602153",
         "full_name": "Delilah Block",
@@ -85,7 +85,7 @@
         ]
     },
     {
-        "image":"https://randomuser.me/api/portraits/women/10.jpg",
+        "image": "https://randomuser.me/api/portraits/women/10.jpg",
         "type": "teacher",
         "tid": "9000900921",
         "full_name": "Karisa Cardenosa",
@@ -100,8 +100,7 @@
         ]
     },
     {
-        "image":"https://randomuser.me/api/portraits/women/15.jpg",
-
+        "image": "https://randomuser.me/api/portraits/women/15.jpg",
         "type": "teacher",
         "tid": "8108865441",
         "full_name": "Mufinella Haughian",
@@ -114,8 +113,8 @@
             "1902378083"
         ]
     },
-    {        "image":"https://randomuser.me/api/portraits/men/55.jpg",
-
+    {
+        "image": "https://randomuser.me/api/portraits/men/55.jpg",
         "type": "teacher",
         "tid": "6545535463",
         "full_name": "Marcel Monget",
@@ -129,8 +128,7 @@
         ]
     },
     {
-        "image":"https://randomuser.me/api/portraits/women/20.jpg",
-
+        "image": "https://randomuser.me/api/portraits/women/20.jpg",
         "type": "teacher",
         "tid": "6924238696",
         "full_name": "Billie Classen",

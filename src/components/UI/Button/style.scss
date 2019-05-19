@@ -1,7 +1,9 @@
+$buttonSize: 30px;
+
 .button {
   cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: $buttonSize;
+  width: $buttonSize;
   border-radius: 50%;
   background-color: rgb(66, 85, 255);
   color: white;
@@ -13,5 +15,8 @@
     transition: box-shadow 0.5s;
     background-color: #5667fd;
     box-shadow: 1px 1px 1px 1px black;
+  }
+  &:focus {
+    outline: none;
   }
 }

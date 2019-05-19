@@ -1,40 +1,40 @@
 $transitionTime: all 0.25s;
 $button_width: 35px;
 
-.button_wrapper{
-width: $button_width;
+.button_wrapper {
+  width: $button_width;
 }
 
 .line {
-    cursor: pointer;
-    transition: $transitionTime;
-    width: $button_width;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;   
+  cursor: pointer;
+  transition: $transitionTime;
+  width: $button_width;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
 }
 
-.line_x1{
-    cursor: pointer;
-    transition: $transitionTime;
-    width: $button_width;
-    height: 5px;
-    background-color: black;
-    transform: rotate(45deg);
+.line_x1 {
+  cursor: pointer;
+  transition: $transitionTime;
+  width: $button_width;
+  height: 5px;
+  background-color: black;
+  transform: rotate(45deg);
 }
 
-.line_x2{
-    cursor: pointer;
-    transition:$transitionTime;
-    opacity: 0;
+.line_x2 {
+  cursor: pointer;
+  transition: $transitionTime;
+  opacity: 0;
 }
 
 .line_x3 {
-    cursor: pointer;
-    transition:$transitionTime;
-    width: $button_width;
-    height: 5px;
-    background-color: black;
-    margin: -3px 0;
-    transform: rotate(-45deg);
+  cursor: pointer;
+  transition: $transitionTime;
+  width: $button_width;
+  height: 5px;
+  background-color: black;
+  margin: -3px 0;
+  transform: rotate(-45deg);
 }

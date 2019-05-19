@@ -1,26 +1,32 @@
 [
-  {"type":"course",
-    "cid": 1902378083,
-    "name": "Web Developer IV"
-  },
-  {"type":"course",
-    "cid": 599121254,
-    "name": "Budget/Accounting Analyst IV"
-  },
-  {"type":"course",
-    "cid": 6871253688,
-    "name": "Electrical Engineer"
-  },
-  {"type":"course",
-    "cid": 1706147252,
-    "name": "Quality Engineer"
-  },
-  {"type":"course",
-    "cid": 4100062060,
-    "name": "Assistant Manager"
-  },
-  {"type":"course",
-    "cid": 3061089802,
-    "name": "Associate Professor"
-  }
- ]
+    {
+        "type": "course",
+        "cid": 1902378083,
+        "name": "Web Developer IV"
+    },
+    {
+        "type": "course",
+        "cid": 599121254,
+        "name": "Budget/Accounting Analyst IV"
+    },
+    {
+        "type": "course",
+        "cid": 6871253688,
+        "name": "Electrical Engineer"
+    },
+    {
+        "type": "course",
+        "cid": 1706147252,
+        "name": "Quality Engineer"
+    },
+    {
+        "type": "course",
+        "cid": 4100062060,
+        "name": "Assistant Manager"
+    },
+    {
+        "type": "course",
+        "cid": 3061089802,
+        "name": "Associate Professor"
+    }
+]

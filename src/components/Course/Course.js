@@ -1,7 +1,7 @@
 import React from "react";
 import teachers from "../../utils/data/teachers.json";
 import students from "../../utils/data/stud.json";
-import ProfileRow from '../UI/ProfileRow/ProfileRow'
+import ProfileRow from "../UI/ProfileRow/ProfileRow";
 import "./style.scss";
 
 const Course = ({ profile }) => {
@@ -21,7 +21,7 @@ const Course = ({ profile }) => {
   };
   return (
     <div className="course">
-      <ProfileRow labelName={'Course name'} data={profile.name} />
+      <ProfileRow labelName={"Course name"} data={profile.name} />
       <hr />
       <div>
         <b>&ensp;Teaching this course:</b>
