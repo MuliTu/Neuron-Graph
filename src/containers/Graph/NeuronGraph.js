@@ -1,17 +1,17 @@
 import React from "react";
 import Graph from "react-graph-vis";
 import { connect } from "react-redux";
-import { config } from "../utils/config/options";
-import Profile from "../components/Profile/Profile";
-import Options from "./Options/Options";
-import MenuButton from "../components/menuButton/MenuButton";
+import { config } from "../../utils/config/options";
+import Profile from "../../components/Profile/Profile";
+import Options from "../Options/Options";
+import MenuButton from "../../components/UI/menuButton/MenuButton";
 import {
   setData,
   setCurrentNode,
   setCoordinate
-} from "../reducers/neighborsReducer/actions";
-import { _getNodes, _getEdges, _getTreeSpacing } from "../store/index";
-import "../App.css";
+} from "../../reducers/neighborsReducer/actions";
+import { _getNodes, _getEdges, _getTreeSpacing } from "../../store/index";
+import "../../App.css";
 
 class NeuronGraph extends React.Component {
   constructor(props) {

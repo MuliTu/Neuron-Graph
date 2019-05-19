@@ -1,6 +1,5 @@
 import React from "react";
-import NeuronGraph from "./containers/NeuronGraph";
-
+import NeuronGraph from './containers/Graph/NeuronGraph'
 class App extends React.Component {
   render() {
     return <div className='App'>

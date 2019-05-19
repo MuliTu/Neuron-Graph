@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.scss";
-import Option from "../../components/Option/Option";
+import Option from "../../components/UI/Option/Option";
 import {
   ADD_TEACHER,
   REMOVE_TEACHER,
@@ -8,12 +8,11 @@ import {
   REMOVE_STUDENT,
   ADD_COURSE,
   REMOVE_COURSE,
-  CHANGE_HIERARCHICAL,
   CHANGE_TREE_SPACING
 } from "../../reducers/neighborsReducer/types";
 import { connect } from "react-redux";
-import Checkbox from "../../components/Checkbox/Checkbox";
-import Input from "../../components/Input/Input";
+import Checkbox from "../../components/UI/Checkbox/Checkbox";
+import Input from "../../components/UI/Input/Input";
 import { _getTreeSpacing } from "../../store";
 class Options extends Component {
   removeTeacherHandler = () => this.props.removeTeacher();

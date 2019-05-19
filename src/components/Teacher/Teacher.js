@@ -1,7 +1,7 @@
 import React from 'react'
-import { getCourseName } from '../Profile/utils/coursesName'
-import ProfileRow from '../ProfileRow/ProfileRow'
-import Image from '../Image/Image'
+import ProfileRow from '../UI/ProfileRow/ProfileRow'
+import Image from '../UI/Image/Image'
+import ProfileArray from '../UI/ProfileArray/ProfileArray';
 import './style.scss'
 
  const  Teacher = ({profile}) => {
@@ -14,16 +14,7 @@ import './style.scss'
         <ProfileRow labelName={'Full name'} data={profile.full_name} />
         <ProfileRow labelName={'Email'} data={profile.email} />
         <ProfileRow labelName={'Gender'} data={profile.gender} />
-        <div>
-          <b>Teaching:</b>
-          {
-              profile.courses.map((curse, idx) => (
-            <div key={idx}>&ensp;
-              {idx + 1}.{getCourseName(curse)}
-            </div>
-          ))
-          }
-        </div>
+        <ProfileArray label={'Teaching'} array={profile.courses}/>
       </div>
       </div>
   )

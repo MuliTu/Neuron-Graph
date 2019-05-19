@@ -1,8 +1,8 @@
 import React from "react";
-import { getCourseName } from "../Profile/utils/coursesName";
 import "./style.scss";
-import ProfileRow from "../ProfileRow/ProfileRow";
-import Image from '../Image/Image'
+import ProfileRow from "../UI/ProfileRow/ProfileRow";
+import Image from '../UI/Image/Image'
+import ProfileArray from '../UI/ProfileArray/ProfileArray'
 
 const Student = ({ profile }) => {
   return (
@@ -15,12 +15,8 @@ const Student = ({ profile }) => {
         <ProfileRow labelName={'Email'} data={profile.email} />
         <ProfileRow labelName={'Gender'} data={profile.gender} />
         <ProfileRow labelName={'From'} data={profile.country} />
-          <b>Study:</b>
-          {profile.courses.map((curse, idx) => (
-            <div key={idx}>
-              &ensp;{idx + 1}.{getCourseName(curse)}
-            </div>
-          ))}
+        <ProfileArray label={'Studying'} array={profile.courses}/>
+
         </div>
     </div>
   );
