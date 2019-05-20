@@ -9,13 +9,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       hierarchical: false,
-      isOpen: true
+      isOpen: false
     };
   }
-  onClickHierarchical = () =>
-  this.setState({ hierarchical: !this.state.hierarchical }, () =>
-    this.forceUpdate()
-  );
+  onClickHierarchical = () => {
+  this.setState({ hierarchical: !this.state.hierarchical }, 
+    () => this.forceUpdate()
+  );}
 
   onClickOptions = () => this.setState({ isOpen: !this.state.isOpen });
 

@@ -1,12 +1,13 @@
-.student {
-  background-color: rgba(#ffa500, 0.4);
+$opacity: 0.9;
+
+.card {
   height: auto;
   width: auto;
   padding: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .image-content-wrapper{
+  .image-content-wrapper {
     display: flex;
   }
   .information {
@@ -19,3 +20,11 @@
     }
   }
 }
+.student {
+  background-color: rgba(#f7b845,$opacity);
+}
+.teacher {
+  background-color: rgba(rgb(241, 80, 80),$opacity);
+}
+
+

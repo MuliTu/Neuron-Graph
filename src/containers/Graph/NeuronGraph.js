@@ -16,21 +16,11 @@ class NeuronGraph extends React.Component {
     super(props);
     this.state = {
       isNodeClicked: false,
-      width: "",
-      height: ""
     };
   }
 
   componentDidMount() {
     this.props.setData();
-    this.setState(
-      {
-        // height:`${window.innerHeight}px`,
-        height: `${window.innerHeight}px`,
-        width: `${window.innerWidth}px`
-      },
-      () => console.log(this.state)
-    );
     window.addEventListener("mousemove", this.onMouseMoveHandler);
   }
 
@@ -41,7 +31,7 @@ class NeuronGraph extends React.Component {
   onMouseMoveHandler = e => {
     this.props.setCoordinate({
       x: e.pageX + 300 <= window.innerWidth ? e.pageX : e.pageX - 300,
-      y: e.pageY - 150 <= window.innerHeight ? e.pageY - 150 : e.pageY
+      y: e.pageY + 300 >= window.innerHeight ? e.pageY - 150 : e.pageY
     });
   };
 
@@ -72,8 +62,6 @@ class NeuronGraph extends React.Component {
     const width = `${window.innerWidth}px`;
     const { isNodeClicked } = this.state;
     const options = {
-      // height:height,
-      // width:width,
       ...config,
       layout: {
         hierarchical: {

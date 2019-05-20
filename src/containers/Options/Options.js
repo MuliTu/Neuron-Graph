@@ -27,7 +27,7 @@ class Options extends Component {
 
   removeCourseHandler = () => this.props.removeCourse();
 
-  changeHierarchicalHandler = () => this.props.onClickHierarchical();
+  // changeHierarchicalHandler = () => ;
 
   changeTreeSpacingHandler = e =>
     this.props.changeTreeSpacing(parseInt(e.target.value));
@@ -55,7 +55,7 @@ class Options extends Component {
           />
           <Checkbox
             label={"Hierarchical"}
-            onChange={this.changeHierarchicalHandler}
+            onChange={this.props.onClickHierarchical}
           />
           <Input
             label={"Tree Spacing (on Hierarchical)"}
