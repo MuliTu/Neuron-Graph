@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Neuron-Graph/static/css/main.89372f24.chunk.css",
-    "main.js": "/Neuron-Graph/static/js/main.df3c9e01.chunk.js",
-    "main.js.map": "/Neuron-Graph/static/js/main.df3c9e01.chunk.js.map",
+    "main.css": "/Neuron-Graph/static/css/main.4771bb7f.chunk.css",
+    "main.js": "/Neuron-Graph/static/js/main.ddd3ca8a.chunk.js",
+    "main.js.map": "/Neuron-Graph/static/js/main.ddd3ca8a.chunk.js.map",
     "runtime~main.js": "/Neuron-Graph/static/js/runtime~main.28199534.js",
     "runtime~main.js.map": "/Neuron-Graph/static/js/runtime~main.28199534.js.map",
-    "static/js/2.3ba708eb.chunk.js": "/Neuron-Graph/static/js/2.3ba708eb.chunk.js",
-    "static/js/2.3ba708eb.chunk.js.map": "/Neuron-Graph/static/js/2.3ba708eb.chunk.js.map",
+    "static/js/2.f2752bf2.chunk.js": "/Neuron-Graph/static/js/2.f2752bf2.chunk.js",
+    "static/js/2.f2752bf2.chunk.js.map": "/Neuron-Graph/static/js/2.f2752bf2.chunk.js.map",
     "index.html": "/Neuron-Graph/index.html",
-    "precache-manifest.8a9998db660ccfab9e8b34eff89bc160.js": "/Neuron-Graph/precache-manifest.8a9998db660ccfab9e8b34eff89bc160.js",
+    "precache-manifest.aa4702bf935ff87e2cea64b1cd7e78b9.js": "/Neuron-Graph/precache-manifest.aa4702bf935ff87e2cea64b1cd7e78b9.js",
     "service-worker.js": "/Neuron-Graph/service-worker.js",
-    "static/css/main.89372f24.chunk.css.map": "/Neuron-Graph/static/css/main.89372f24.chunk.css.map"
+    "static/css/main.4771bb7f.chunk.css.map": "/Neuron-Graph/static/css/main.4771bb7f.chunk.css.map"
   }
 }
