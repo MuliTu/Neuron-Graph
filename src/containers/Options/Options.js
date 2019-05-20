@@ -34,7 +34,8 @@ class Options extends Component {
 
   render() {
     return (
-      <div className={this.props.isOpen ? "open_window" : "close_window"}>
+      <div className={this.props.isOpen ? "open_window" : "close_window"} 
+      style={{height:`${window.innerHeight}px`}}>
         <h3>Options</h3>
         <div className="options">
           <Option

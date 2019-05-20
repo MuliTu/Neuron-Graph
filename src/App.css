@@ -8,12 +8,16 @@
 .flex{
     display: flex;
 }
+
+h3{
+    color:white;
+}
 .top_wrapper{
     display: flex;
     flex-direction: row;
     margin: auto;
-    background-color: rgb(88, 152, 212);
-    height: 100px;
+    background-color: rgb(115, 30, 165);
+    height: 50px;
 }
 .center{
     justify-content: center;
@@ -23,8 +27,8 @@
     margin: auto 0 auto 5px;
 }
 .option_section{
-    background-color: rgb(36, 46, 36);
-    color: gainsboro;
+    background-color:rgb(132, 78, 163);
+    color: white;
     width: auto;
 }
 

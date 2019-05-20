@@ -4,7 +4,7 @@ import "./style.scss";
 export default function Button({ label, onClick }) {
   return (
     <button className="button" onClick={onClick}>
-      {label}
+     <div>{label}</div>
     </button>
   );
 }

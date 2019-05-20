@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       hierarchical: false,
-      isOpen: false
+      isOpen: true
     };
   }
   onClickHierarchical = () =>
@@ -38,7 +38,7 @@ class App extends React.Component {
               <MenuButton onClick={this.onClickOptions} isClicked={isOpen} />
                 </div>
                 <div className='center'>
-              <h1>School Graph</h1>
+              <h3>School Graph</h3>
               </div>
             </div>
             <div>

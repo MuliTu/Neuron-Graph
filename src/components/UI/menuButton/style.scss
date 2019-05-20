@@ -10,7 +10,7 @@ $button_width: 35px;
   transition: $transitionTime;
   width: $button_width;
   height: 5px;
-  background-color: black;
+  background-color: white;
   margin: 6px 0;
 }
 
@@ -19,7 +19,7 @@ $button_width: 35px;
   transition: $transitionTime;
   width: $button_width;
   height: 5px;
-  background-color: black;
+  background-color: white;
   transform: rotate(45deg);
 }
 
@@ -34,7 +34,7 @@ $button_width: 35px;
   transition: $transitionTime;
   width: $button_width;
   height: 5px;
-  background-color: black;
+  background-color: white;
   margin: -3px 0;
   transform: rotate(-45deg);
 }

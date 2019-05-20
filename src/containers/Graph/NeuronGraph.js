@@ -16,20 +16,21 @@ class NeuronGraph extends React.Component {
     super(props);
     this.state = {
       isNodeClicked: false,
-      width:'',
-      height:''
-
+      width: "",
+      height: ""
     };
   }
 
-  
   componentDidMount() {
     this.props.setData();
-    this.setState({
-      // height:`${window.innerHeight}px`,
-      height:`${window.innerHeight}px`,
-      width:`${window.innerWidth}px`
-    },()=>console.log(this.state))
+    this.setState(
+      {
+        // height:`${window.innerHeight}px`,
+        height: `${window.innerHeight}px`,
+        width: `${window.innerWidth}px`
+      },
+      () => console.log(this.state)
+    );
     window.addEventListener("mousemove", this.onMouseMoveHandler);
   }
 
@@ -37,12 +38,12 @@ class NeuronGraph extends React.Component {
     window.removeEventListener("mousemove", this.onMouseMoveHandler);
   }
 
-  onMouseMoveHandler = e =>{
+  onMouseMoveHandler = e => {
     this.props.setCoordinate({
       x: e.pageX + 300 <= window.innerWidth ? e.pageX : e.pageX - 300,
-      y: e.pageY - 150 <= window.innerHeight? e.pageY - 150 : e.pageY
+      y: e.pageY - 150 <= window.innerHeight ? e.pageY - 150 : e.pageY
     });
-  }
+  };
 
   setCurrentNode = node => {
     this.props.setCurrentNode(node);
@@ -66,9 +67,9 @@ class NeuronGraph extends React.Component {
   onClickOptions = () => this.setState({ isOpen: !this.state.isOpen });
 
   render() {
-    const { nodes, edges, treeSpacing,hierarchical } = this.props;
-    const height = `${window.innerHeight - 100}px`
-    const width = `${window.innerWidth }px`
+    const { nodes, edges, treeSpacing, hierarchical } = this.props;
+    const height = `${window.innerHeight - 100}px`;
+    const width = `${window.innerWidth}px`;
     const { isNodeClicked } = this.state;
     const options = {
       // height:height,
@@ -85,26 +86,26 @@ class NeuronGraph extends React.Component {
       }
     };
     return (
-      <div style={{float:"right"}}>
-{isNodeClicked ? <Profile /> : <div />}
-<Graph
-  graph={{ nodes: nodes, edges: edges }}
-  options={options}
-  events={{
-    hoverNode: this.onHoverNodeHandler,
-    blurNode: this.onBlueHandler,
-    select: this.onClickNode
-  }}
- style={{width:width,height:height}}/>
-     </div>
+      <div>
+        {isNodeClicked ? <Profile /> : <div />}
+        <Graph
+          graph={{ nodes: nodes, edges: edges }}
+          options={options}
+          events={{
+            hoverNode: this.onHoverNodeHandler,
+            blurNode: this.onBlueHandler,
+            select: this.onClickNode
+          }}
+          style={{ width: width, height: height }}
+        />
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
   nodes: _getNodes(state),
-  edges: _getEdges(state),
-
+  edges: _getEdges(state)
 });
 
 export default connect(
