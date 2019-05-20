@@ -7,13 +7,13 @@ import "./style.scss";
 const Teacher = ({ profile }) => {
   return (
     <div className="teacher">
-      <div className="image_content_wrapper">
+      <div className="image-content-wrapper">
         <Image path={profile.image} />
         <div className="information">
-          <div className="small">ID:{profile.tid}</div>
-          <ProfileRow labelName={"Full name"} data={profile.full_name} />
-          <ProfileRow labelName={"Email"} data={profile.email} />
-          <ProfileRow labelName={"Gender"} data={profile.gender} />
+        <div className="small">ID:{profile.tid}</div>
+            <b>{profile.full_name}</b>
+            <div className='small_font'>{profile.email}</div>
+            <div className='small_font divider'>{profile.type} | {profile.gender}</div>
           <ProfileArray label={"Teaching"} array={profile.courses} />
         </div>
       </div>

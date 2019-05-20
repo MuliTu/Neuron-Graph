@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.scss";
-import ProfileRow from "../UI/ProfileRow/ProfileRow";
 import Image from "../UI/Image/Image";
 import ProfileArray from "../UI/ProfileArray/ProfileArray";
 
@@ -11,13 +10,9 @@ const Student = ({ profile }) => {
         <Image path={profile.image} />
         <div className="information">
           <div className="small">ID:{profile.sid}</div>
-          <ProfileRow
-            labelName={"Full name"}
-            data={`${profile.first_name} ${profile.last_name}`}
-          />
-          <ProfileRow labelName={"Email"} data={profile.email} />
-          <ProfileRow labelName={"Gender"} data={profile.gender} />
-          <ProfileRow labelName={"From"} data={profile.country} />
+            <b>{`${profile.first_name} ${profile.last_name}`}</b>
+            <div className='small_font'>{profile.email}</div>
+            <div className='small_font divider'>{profile.type} | {profile.country} | {profile.gender}</div>
           <ProfileArray label={"Studying"} array={profile.courses} />
         </div>
       </div>
