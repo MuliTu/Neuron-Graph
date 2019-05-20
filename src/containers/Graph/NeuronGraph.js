@@ -26,9 +26,10 @@ class NeuronGraph extends React.Component {
   componentDidMount() {
     this.props.setData();
     this.setState({
-      height:(window.innerHeight - 100).toString(),
-      width:window.innerWidth.toString()
-    })
+      // height:`${window.innerHeight}px`,
+      height:`${window.innerHeight}px`,
+      width:`${window.innerWidth}px`
+    },()=>console.log(this.state))
     window.addEventListener("mousemove", this.onMouseMoveHandler);
   }
 
@@ -65,12 +66,14 @@ class NeuronGraph extends React.Component {
   onClickOptions = () => this.setState({ isOpen: !this.state.isOpen });
 
   render() {
-    const { nodes, edges, treeSpacing, hierarchical } = this.props;
-    const { isNodeClicked, height, width } = this.state;
+    const { nodes, edges, treeSpacing,hierarchical } = this.props;
+    const height = `${window.innerHeight - 100}px`
+    const width = `${window.innerWidth }px`
+    const { isNodeClicked } = this.state;
     const options = {
+      // height:height,
+      // width:width,
       ...config,
-      height:height,
-      width:width,
       layout: {
         hierarchical: {
           enabled: hierarchical,
@@ -83,14 +86,6 @@ class NeuronGraph extends React.Component {
     };
     return (
       <div style={{float:"right"}}>
-               {/* <MenuButton onClick={this.onClickOptions} isClicked={isOpen} /> */}
-
-       {/* <Options
-          onClickHierarchical={this.onClickHierarchical}
-          treeSpacing={treeSpacing}
-          onChangeTreeSpacing={this.onChangeTreeSpacingHandler}
-          isOpen={isOpen}
-        /> */}
 {isNodeClicked ? <Profile /> : <div />}
 <Graph
   graph={{ nodes: nodes, edges: edges }}
@@ -100,7 +95,7 @@ class NeuronGraph extends React.Component {
     blurNode: this.onBlueHandler,
     select: this.onClickNode
   }}
-/>
+ style={{width:width,height:height}}/>
      </div>
     );
   }

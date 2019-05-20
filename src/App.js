@@ -38,10 +38,10 @@ class App extends React.Component {
               <MenuButton onClick={this.onClickOptions} isClicked={isOpen} />
                 </div>
                 <div className='center'>
-              <h1>School Graphe</h1>
+              <h1>School Graph</h1>
               </div>
             </div>
-            <div style={{ float: "right" }}>
+            <div>
               <NeuronGraph hierarchical={hierarchical} treeSpacing={this.props.treeSpacing}/>
             </div>
           </div>

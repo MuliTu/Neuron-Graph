@@ -6,8 +6,6 @@ import {
   SET_EDGES,
   SET_CURRENT_NODE,
   SET_COORDINATE,
-  CHANGE_HIERARCHICAL,
-  CHANGE_TREE_SPACING
 } from "./types";
 
 export const setData = state => dispatch => {
@@ -22,7 +20,7 @@ const setNodes = dispatch => {
     label: data.full_name,
     color: "red",
     shape: "circularImage",
-    size: 30,
+    size: 20,
     borderWidth: 4.5,
     borderWidthSelected: 20
   }));
@@ -32,7 +30,7 @@ const setNodes = dispatch => {
       ...data,
       label: `${data.first_name} ${data.last_name}`,
       shape: "circularImage",
-      size: 20,
+      size: 10,
       borderWidth: 2.5,
       borderWidthSelected: 20
     }));
@@ -43,7 +41,7 @@ const setNodes = dispatch => {
       label: data.name,
       shape: "hexagon",
       color: "green",
-      size: 20,
+      size: 10,
       borderWidth: 2.5,
       borderWidthSelected: 20,
       margin: 20

@@ -1,19 +1,18 @@
 export const config = {
   nodes: {
-    size: 5,
+    size: 2,
     borderWidth: 5,
     shadow: {
       enabled: true
     }
   },
-  autoResize: false,
+  autoResize: true,
   edges: {
-    width: 1.11
+    width: 0.11
   },
   interaction: {
     hover: true,
     hoverConnectedEdges: true,
-    selectable: true,
     selectConnectedEdges: true,
     zoomView: true,
     dragView: true
