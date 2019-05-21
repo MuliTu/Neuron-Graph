@@ -11,6 +11,7 @@ export const config = {
     width: 0.11
   },
   interaction: {
+    multiselect: true,
     hover: true,
     hoverConnectedEdges: true,
     selectConnectedEdges: true,
